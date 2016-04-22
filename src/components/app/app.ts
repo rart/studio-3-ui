@@ -3,11 +3,12 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router'
 
 import {HomeCmp} from "../home/home";
 import {PreviewCmp} from "../preview/preview";
+import {CommunicationService} from "../../services/communication-service";
 
 @Component({
     selector: 'app',
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS],
+    providers: [ROUTER_PROVIDERS, CommunicationService],
     template: '<router-outlet></router-outlet>'
 }) @RouteConfig([
     {path: '/', name: 'Home', component: HomeCmp, useAsDefault: true},
